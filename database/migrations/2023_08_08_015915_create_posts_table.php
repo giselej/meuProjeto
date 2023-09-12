@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('titulo');
             $table->text('conteudo');
-            $table->unsignedBiglnteger('usuario_id');//chave estrageira para usuarios
+            $table->unsignedBigInteger('usuario_id');//chave estrageira para usuarios
             $table->timestamps();
             $table->foreign('usuario_id')->references('id')->on('usuarios')->onDelete('cascade');
         });

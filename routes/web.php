@@ -19,5 +19,12 @@ Route::get('/', function () {
 
 
 
-Route::get('usuarios', 'usuarioController@index');
+Route::get('usuarios', 'App\Http\Controllers\usuarioController@index');
 Route::get('usuario/{id}', 'usuarioController@show');
+Route::get('usuario/{id}','App\Http\controllers\UsuarioController@delete');
+Route::delete('usuario/{id}','App\Http\controllers\UsuariController@delete');
+Route::post('usuario/{id}','App\Http\controllers\UsuariController@delete');
+Route::put('usuario/{id}','App\Http\controllers\UsuariController@delete');
+
+
+
