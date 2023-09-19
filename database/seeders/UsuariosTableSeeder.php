@@ -14,7 +14,7 @@ class UsuariosTableSeeder extends Seeder
      */
     public function run(): void
     {
-        Usuario::crete([
+        Usuario::create([
             'nome'=>'joao Silva',
             'email'=>'joao.silva@email.com',
 

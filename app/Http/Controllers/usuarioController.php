@@ -9,8 +9,8 @@ class usuarioController extends Controller
 {
     public function index(){
         $usuarios=Usuario::all();
-        return view('usuario.listar')
-          ->with('meuUsuario',$usuarios[0]);
+        return view('listar')
+          ->with('meusUsuarios',$usuarios);
 
     }
     public function show($id){
