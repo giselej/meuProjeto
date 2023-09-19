@@ -26,5 +26,9 @@ Route::delete('usuario/{id}','App\Http\controllers\UsuariController@delete');
 Route::post('usuario/{id}','App\Http\controllers\UsuariController@delete');
 Route::put('usuario/{id}','App\Http\controllers\UsuariController@delete');
 
+Route::post('novo-usuario','app\http\controllers\usuarioController@salvarUsuario');
+
+Route::get('novo-usuario','app\http\controllers\usuarioController@criarUsuario');
+
 
 

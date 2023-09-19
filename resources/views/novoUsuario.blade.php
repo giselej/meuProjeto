@@ -6,7 +6,7 @@
 </head>
 <Body>
     <h1> Novo Usuario</h1>
-    <form action=""method="post">
+    <form action="{{url('novo-usuario')}}"method="post">
         @csrf
         <label for="nome"></label>
         <input type="text"name="nome" id="nome"required>

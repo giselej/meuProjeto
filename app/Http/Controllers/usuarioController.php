@@ -21,4 +21,12 @@ class usuarioController extends Controller
         $usuario=Usuario::find($id);
 
     }
+
+        public function salvarUsuario(){
+            return $REQUEST->all();
+        }
+        public function criarUsuario(){
+            return view('novoUsuario');
+        }
+        
 }
