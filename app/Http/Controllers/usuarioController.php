@@ -9,24 +9,49 @@ class usuarioController extends Controller
 {
     public function index(){
         $usuarios=Usuario::all();
-        return view('listar')
+        return view('usuario,listar')
           ->with('meusUsuarios',$usuarios);
 
     }
-    public function show($id){
-        return Usuario::find($id);
+    public function editar($id){
+
+      $Usuario::find($id);
 
     }
     public function delete($id){
         $usuario=Usuario::find($id);
+        return view('usuario.editar')
+        ->with('usuario',$usuario);
 
     }
 
-        public function salvarUsuario(){
-            return $REQUEST->all();
+        public function salvar(request $request){
+            $usuario=new usuario();
+            $usuario->nome=$REQUEST->nome;
+            $usuario->senha=bcrypt($REQUEST->senha);
+            $usuario->email=$REQUEST->email;
+            $usuario->save();
+
         }
-        public function criarUsuario(){
-            return view('novoUsuario');
+
+        public function criar(){
+            return view('usuario.novoUsuario');
         }
-        
+
+        public function editar(){
+
+
+        }
+        public function atualizar(request $REQUEST,$id){
+            $usuario= Usuario::find($id);
+            $usuario->nome=$REQUEST->nome;
+            $usuario->senha=$REQUEST->senha;
+            $usuario->email=$REQUEST->email;
+            $usuario->save();
+
+            return redirect()->route('usuario.listar');
+
+
+
+
 }

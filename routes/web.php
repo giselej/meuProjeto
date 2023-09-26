@@ -19,16 +19,37 @@ Route::get('/', function () {
 
 
 
-Route::get('usuarios', 'App\Http\Controllers\usuarioController@index');
-Route::get('usuario/{id}', 'usuarioController@show');
-Route::get('usuario/{id}','App\Http\controllers\UsuarioController@delete');
-Route::delete('usuario/{id}','App\Http\controllers\UsuariController@delete');
-Route::post('usuario/{id}','App\Http\controllers\UsuariController@delete');
-Route::put('usuario/{id}','App\Http\controllers\UsuariController@delete');
+// Route::get('usuarios',
+// 'App\Http\Controllers\usuarioController@index');
+// Route::get('usuario/{id}',
+//  'usuarioController@show');
+// Route::get('usuario/{id}',
+// 'App\Http\controllers\UsuarioController@delete');
+// Route::delete('usuario/{id}','App\Http\controllers\UsuariController@delete');
+// Route::post('usuario/{id}','App\Http\controllers\UsuariController@delete');
+// Route::put('usuario/{id}','App\Http\controllers\UsuariController@delete');
 
-Route::post('novo-usuario','app\http\controllers\usuarioController@salvarUsuario');
+// Route::post('novo-usuario','app\http\controllers\usuarioController@salvarUsuario');
+// Route::post('novo-usuario','app\http\controllers\usuarioController@salvarUsuario');
 
-Route::get('novo-usuario','app\http\controllers\usuarioController@criarUsuario');
+Route::get('usuarios/novo',
+'app\http\Controllers\usuarioController@criar');
+
+Route::get('usuarios',
+'App\Http\Controllers\usuarioController@index')
+->name('usuarios.listar');
+
+Route::get('usuarios/{id}',
+'app\http\Controllers\usuarioController@mostrar');
+
+Route::get('usuarios/{id}/editar',
+'app\http\Controllers\usuarioController@editar');
+
+Route::post('usuarios',
+'App\Http\Controllers\usuarioController@salvar');
+
+Route::put('usuarios',
+'App\Http\Controllers\usuarioController@atualizar');
 
 
 
