@@ -33,20 +33,21 @@ Route::get('/', function () {
 // Route::post('novo-usuario','app\http\controllers\usuarioController@salvarUsuario');
 
 Route::get('usuarios/novo',
-'app\http\Controllers\usuarioController@criar');
+'App\http\Controllers\usuarioController@criar');
 
 Route::get('usuarios',
 'App\Http\Controllers\usuarioController@index')
 ->name('usuarios.listar');
 
 Route::get('usuarios/{id}',
-'app\http\Controllers\usuarioController@mostrar');
+'App\Http\Controllers\usuarioController@mostrar');
 
 Route::get('usuarios/{id}/editar',
-'app\http\Controllers\usuarioController@editar');
+'App\Http\Controllers\usuarioController@editar');
 
 Route::post('usuarios',
-'App\Http\Controllers\usuarioController@salvar');
+'App\Http\Controllers\usuarioController@salvar')
+->name('novo-usuario');
 
 Route::put('usuarios',
 'App\Http\Controllers\usuarioController@atualizar');
