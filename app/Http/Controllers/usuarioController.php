@@ -9,13 +9,14 @@ class usuarioController extends Controller
 {
     public function index(){
         $usuarios=Usuario::all();
-        return view('usuario,listar')
+        return view('usuario.listar')
           ->with('meusUsuarios',$usuarios);
 
     }
     public function editar($id){
+        $usuario = usuario::find($id);
+        return view('usuario.editar')->with('usuario',$usuario);
 
-      $Usuario::find($id);
 
     }
     public function delete($id){
@@ -36,7 +37,7 @@ class usuarioController extends Controller
         }
 
         public function criar(){
-            return view('novoUsuario');
+            return view('usuario.novoUsuario');
         }
 
 
