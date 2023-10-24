@@ -41,15 +41,17 @@ class usuarioController extends Controller
         }
 
 
-        public function atualizar(Request $Request,$id){
+
+        public function atualizar(Request $request,$id){
+return $request->all();
             $usuario= Usuario::find($id);
-            $usuario->nome=$Request->nome;
-            $usuario->senha=$Request->senha;
-            $usuario->email=$Request->email;
+            $usuario->nome=$request->nome;
+            $usuario->senha=$request->senha;
+            $usuario->email=$request->email;
             $usuario->save();
 
 
-            return redirect()->route('usuario.listar');
+            return redirect()->route('usuarios.listar');
 
         }
 }

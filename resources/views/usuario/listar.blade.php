@@ -19,7 +19,7 @@
     @forelse ($meusUsuarios as $usuario)
     <tr>
         <td>{{$usuario->id}}</td>
-        <td>{{$usuario->nomne}}</td>
+        <td>{{$usuario->nome}}</td>
         <td>{{$usuario->email}}</td>
         <td> <a href="{{route ('usuario.editar', $usuario->id) }}">
             editar usuario</a>

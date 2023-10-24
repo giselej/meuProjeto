@@ -49,7 +49,7 @@ Route::post('usuarios',
 'App\Http\Controllers\usuarioController@salvar')
 ->name('novo-usuario');
 
-Route::put('usuarios',
+Route::put('usuarios/{id}',
 'App\Http\Controllers\usuarioController@atualizar')->name('usuario.atualizar');
 
 
