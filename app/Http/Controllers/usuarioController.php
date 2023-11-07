@@ -19,10 +19,11 @@ class usuarioController extends Controller
 
 
     }
-    public function delete($id){
+    public function deletar($id){
         $usuario=Usuario::find($id);
-        return view('usuario.editar')
-        ->with('usuario',$usuario);
+        $usuario->delete();
+
+        return redirect()->route('usuarios.listar');
 
     }
 
@@ -43,7 +44,7 @@ class usuarioController extends Controller
 
 
         public function atualizar(Request $request,$id){
-return $request->all();
+
             $usuario= Usuario::find($id);
             $usuario->nome=$request->nome;
             $usuario->senha=$request->senha;

@@ -52,5 +52,5 @@ Route::post('usuarios',
 Route::put('usuarios/{id}',
 'App\Http\Controllers\usuarioController@atualizar')->name('usuario.atualizar');
 
-
+route::delete('usuarios/{id}','App\Http\Controllers\usuarioController@deletar')->name('usuario.deletar');
 

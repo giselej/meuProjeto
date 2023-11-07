@@ -17,7 +17,8 @@ class UsuariosTableSeeder extends Seeder
         Usuario::create([
             'nome'=>'joao Silva',
             'email'=>'joao.silva@email.com',
-
+            'senha'=> '123',
+            'deletar'=>'',
         ]);
     }
 }
