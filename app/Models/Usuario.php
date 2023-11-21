@@ -8,13 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Usuario extends Model
 {
     use HasFactory;
-    protected $table='usuarios';
-    protected $fillable=[   
+    protected $table = 'usuarios';
+
+//    protected $with = ['enderecos'];
+    protected $fillable = [
         'nome',
         'email',
     ];
-    public function posts()
+
+    public function enderecos()
     {
-        return $this->hasMany(Post::class);
+        return $this->hasMany(Endereco::class);
     }
 }

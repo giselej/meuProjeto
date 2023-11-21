@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Database\Seeders;
 
 use App\Models\Usuario;
@@ -15,10 +14,15 @@ class UsuariosTableSeeder extends Seeder
     public function run(): void
     {
         Usuario::create([
-            'nome'=>'joao Silva',
+            'nome'=>'João Silva',
             'email'=>'joao.silva@email.com',
-            'senha'=> '123',
-            'deletar'=>'',
+            'senha'=>'654321'
+        ]);
+
+        Usuario::create([
+            'nome'=> 'Jose barbosa',
+            'email'=>'jose.barbosa@email.com',
+            'senha'=>'123456'
         ]);
     }
 }
