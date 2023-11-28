@@ -10,6 +10,8 @@
             <th>id</th>
             <th>nome</th>
             <th>email</th>
+            <th>rua</th>
+            <th>propriedade</th>
             <th>editar</th>
             <th>deletar</th>
         </tr>
@@ -21,6 +23,22 @@
         <td>{{$usuario->id}}</td>
         <td>{{$usuario->nome}}</td>
         <td>{{$usuario->email}}</td>
+
+        @forelse ( $usuario->enderecos as $endereco )
+        <td>{{$endereco->rua}}</td>
+        @if($endereco->propriedade)
+        <td>{{$endereco->propriedade->nome}}</td>
+
+        @else
+        <td>--</td>
+        @endif
+
+        @empty
+
+        <td>--</td>
+        <td>--</td>
+
+        @endforelse
 
         <td> <a href="{{route ('usuario.editar', $usuario->id) }}">
             editar usuario</a>

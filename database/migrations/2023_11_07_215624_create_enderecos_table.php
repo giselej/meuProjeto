@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('enderecos', function (Blueprint $table) {
             $table->id();
             $table->string('rua');
+            $table->string('cep');
             $table->foreignId('usuario_id')->constrained('usuarios');
             $table->timestamps();
         });
